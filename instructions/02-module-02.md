@@ -36,17 +36,17 @@ To use Azure Machine Learning, you need to provision an Azure Machine Learning w
 
 1. In Azure Machine Learning studio, you should see your newly created workspace. If not, select **All workspaces** in the left-hand menu and then select the workspace you just created.
 
-~~## Enable preview features~~
+<!-- ## Enable preview features
 
-~~Some features of Azure Machine Learning are in preview, and need to be explicitly enabled in your workspace.~~
+Some features of Azure Machine Learning are in preview, and need to be explicitly enabled in your workspace.
 
-~~1. In Azure Machine Learning Studio, click on **manage preview features** (the loud speaker icon - &#128363;).~~
+1. In Azure Machine Learning Studio, click on **manage preview features** (the loud speaker icon - &#128363;).
 
-~~![A screenshot of the manage preview features button on the menu.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)~~
+    ![A screenshot of the manage preview features button on the menu.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)
 
-~~1. Enable the following preview feature:~~
+1. Enable the following preview feature:
 
-~~- *Guided experience for submitting training jobs with serverless compute*~~
+    - *Guided experience for submitting training jobs with serverless compute* -->
 
 ## Use automated machine learning to train a model
 
@@ -108,11 +108,11 @@ Automated machine learning enables you to try multiple algorithms and parameters
         - **Max nodes**: 3
         - **Metric score threshold**: 0.85 (*so that if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*)
         - **Timeout**: 15
-        - **Iteration timeout**: 5
+        - **Iteration timeout**: 15
         - **Enable early termination**: *Selected*
     - **Validation and test**:
         - **Validation type**: Train-validation split
-        - **Percentage of validation data**: 10
+        - **Percentage of validation data**: 20
         - **Test dataset**: None
 
     **Compute**:
@@ -143,7 +143,7 @@ When the automated machine learning job has completed, you can review the best m
 
     Review the charts which show the performance of the model. The **residuals** chart shows the *residuals* (the differences between predicted and actual values) as a histogram. The **predicted_true** chart compares the predicted values against the true values. 
 
-## Deploy and test the model (SKIP THIS SECTION)
+<!-- ## Deploy and test the model (SKIP THIS SECTION)
 
 1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
@@ -202,8 +202,7 @@ Now you can test your deployed service.
 
     The test pane took the input data and used the model you trained to return the predicted number of rentals.
 
-Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*.
-
+Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*. -->
 ## Clean-up
 
 The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage.
