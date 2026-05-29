@@ -77,7 +77,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
         - **Data source**:
             - Select **From local files**
         - **Web URL**:
-            - **Web URL**: `https://aka.ms/bike-rentals`
+            - **Web URL**: [Bike Rentals Dataset](https://raw.githubusercontent.com/pmodheji/AI-900-AIFundamentals/refs/heads/main/data/ml/daily-bike-share.csv)
             - **Skip data validation**: *do not select*
         - **Settings**:
             - **File format**: Delimited
