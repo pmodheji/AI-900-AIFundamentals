@@ -36,17 +36,17 @@ To use Azure Machine Learning, you need to provision an Azure Machine Learning w
 
 1. In Azure Machine Learning studio, you should see your newly created workspace. If not, select **All workspaces** in the left-hand menu and then select the workspace you just created.
 
-## Enable preview features
+~~## Enable preview features~~
 
-Some features of Azure Machine Learning are in preview, and need to be explicitly enabled in your workspace.
+~~Some features of Azure Machine Learning are in preview, and need to be explicitly enabled in your workspace.~~
 
-1. In Azure Machine Learning Studio, click on **manage preview features** (the loud speaker icon - &#128363;).
+~~1. In Azure Machine Learning Studio, click on **manage preview features** (the loud speaker icon - &#128363;).~~
 
-    ![A screenshot of the manage preview features button on the menu.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)
+~~![A screenshot of the manage preview features button on the menu.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)~~
 
-1. Enable the following preview feature:
+~~1. Enable the following preview feature:~~
 
-    - *Guided experience for submitting training jobs with serverless compute*
+~~- *Guided experience for submitting training jobs with serverless compute*~~
 
 ## Use automated machine learning to train a model
 
