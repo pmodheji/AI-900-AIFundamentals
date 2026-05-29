@@ -75,7 +75,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
             - **Description**: Historic bike rental data
             - **Type**: Tabular
         - **Data source**:
-            - Select **From web files**
+            - Select **From local files**
         - **Web URL**:
             - **Web URL**: `https://aka.ms/bike-rentals`
             - **Skip data validation**: *do not select*
@@ -143,7 +143,7 @@ When the automated machine learning job has completed, you can review the best m
 
     Review the charts which show the performance of the model. The **residuals** chart shows the *residuals* (the differences between predicted and actual values) as a histogram. The **predicted_true** chart compares the predicted values against the true values. 
 
-## Deploy and test the model
+## Deploy and test the model (SKIP THIS SECTION)
 
 1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
