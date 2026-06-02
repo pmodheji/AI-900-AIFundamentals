@@ -143,7 +143,7 @@ When the automated machine learning job has completed, you can review the best m
 
     Review the charts which show the performance of the model. The **residuals** chart shows the *residuals* (the differences between predicted and actual values) as a histogram. The **predicted_true** chart compares the predicted values against the true values. 
 
-<!-- ## Deploy and test the model (SKIP THIS SECTION)
+## Deploy and test the model
 
 1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
@@ -202,7 +202,7 @@ Now you can test your deployed service.
 
     The test pane took the input data and used the model you trained to return the predicted number of rentals.
 
-Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*. -->
+Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*.
 ## Clean-up
 
 <!-- The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage.
