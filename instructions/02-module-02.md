@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore Automated Machine Learning in Azure ML'
+    title: 'Explore Automated Machine Learning in Azure ML with Deployment'
 ---
 
 # Explore Automated Machine Learning in Azure ML
@@ -143,13 +143,16 @@ When the automated machine learning job has completed, you can review the best m
 
     Review the charts which show the performance of the model. The **residuals** chart shows the *residuals* (the differences between predicted and actual values) as a histogram. The **predicted_true** chart compares the predicted values against the true values. 
 
-<!-- ## Deploy and test the model (SKIP THIS SECTION)
+<!-- ## Deploy and test the model
 
-1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Web service** option to deploy the model with the following settings:
-    - **Name**: predict-rentals
-    - **Description**: Predict cycle rentals
-    - **Compute type**: Azure Container Instance
-    - **Enable authentication**: *Selected*
+1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Real-time endpoint** option to deploy the model with the following settings:
+    - **Instance count**: 1
+    - **Virtual machine**: Any available option
+    - **Endpoint**: New
+    - **Endpoint name**: predict-rentals
+    - **Deployment name**: Any meaningful name
+    - **Inferencing data collection**: Disabled
+    - **Package Model**: Disabled
 
 1. Wait for the deployment to start - this may take a few seconds. The **Deploy status** for the **predict-rentals** endpoint will be indicated in the main part of the page as *Running*.
 1. Wait for the **Deploy status** to change to *Succeeded*. This may take 5-10 minutes.
@@ -166,25 +169,24 @@ Now you can test your deployed service.
 
     ```JSON
     {
-      "Inputs": { 
-        "data": [
-          {
-            "day": 1,
-            "mnth": 1,   
-            "year": 2022,
-            "season": 2,
-            "holiday": 0,
-            "weekday": 1,
-            "workingday": 1,
-            "weathersit": 2, 
-            "temp": 0.3, 
-            "atemp": 0.3,
-            "hum": 0.3,
-            "windspeed": 0.3 
-          }
-        ]    
-      },   
-      "GlobalParameters": 1.0
+      "input_data": {
+        "columns": [
+            "day",
+            "mnth",   
+            "year",
+            "season",
+            "holiday",
+            "weekday",
+            "workingday",
+            "weathersit", 
+            "temp", 
+            "atemp",
+            "hum",
+            "windspeed"
+        ],
+        "data": [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
+      },
+      "params": {}
     }
     ```
 
@@ -193,16 +195,14 @@ Now you can test your deployed service.
 1. Review the test results, which include a predicted number of rentals based on the input features - similar to this:
 
     ```JSON
-    {
-      "Results": [
+    [
         444.27799000000000
-      ]
-    }
+    ]
     ```
 
-    The test pane took the input data and used the model you trained to return the predicted number of rentals.
+    The test pane took the input data and used the model you trained to return the predicted number of rentals. -->
 
-Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*. -->
+Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*.
 ## Clean-up
 
 <!-- The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage.
