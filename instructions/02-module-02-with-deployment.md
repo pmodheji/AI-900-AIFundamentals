@@ -145,11 +145,14 @@ When the automated machine learning job has completed, you can review the best m
 
 ## Deploy and test the model
 
-1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Web service** option to deploy the model with the following settings:
-    - **Name**: predict-rentals
-    - **Description**: Predict cycle rentals
-    - **Compute type**: Azure Container Instance
-    - **Enable authentication**: *Selected*
+1. On the **Model** tab for the best model trained by your automated machine learning job, select **Deploy** and use the **Real-time endpoint** option to deploy the model with the following settings:
+    - **Instance count**: 1
+    - **Virtual machine**: Any available option
+    - **Endpoint**: New
+    - **Endpoint name**: predict-rentals
+    - **Deployment name**: Any meaningful name
+    - **Inferencing data collection**: Disabled
+    - **Package Model**: Disabled
 
 1. Wait for the deployment to start - this may take a few seconds. The **Deploy status** for the **predict-rentals** endpoint will be indicated in the main part of the page as *Running*.
 1. Wait for the **Deploy status** to change to *Succeeded*. This may take 5-10 minutes.
