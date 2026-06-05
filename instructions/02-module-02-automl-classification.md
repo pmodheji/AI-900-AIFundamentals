@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Explore Automated Machine Learning in Azure ML with Deployment'
+    title: 'Explore Automated Machine Learning in Azure ML for Classification Task'
 ---
 
 # Explore Automated Machine Learning in Azure ML
