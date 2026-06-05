@@ -89,7 +89,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
             - **Skip rows**: None
             - **Dataset contains multi-line data**: *do not select*
         - **Schema**:
-            - Include all ***REQUIRED*** columns
+            - Include all ***REQUIRED*** and ***RELATED*** columns
             - Review the automatically detected types
 
         Select the **diabetes** dataset after you've created it.
@@ -103,7 +103,7 @@ Automated machine learning enables you to try multiple algorithms and parameters
         - **Primary metric**: Accuracy
         - **Explain best model**: *Unselected*
         - **Use all supported models**: <u>Un</u>selected. *You'll restrict the job to try only a few specific algorithms.*
-        - **Allowed models**: *Select only **Logistic Regression** and **XGBoost** — normally you'd want to try as many as possible, but each model added increases the time it takes to run the job.*
+        - **Allowed models**: *Select only **LogisticRegression**, **LightGBM**, and **XGBoostClassifier** — normally you'd want to try as many as possible, but each model added increases the time it takes to run the job.*
     - **Limits**: *Expand this section*
         - **Max trials**: 3
         - **Max concurrent trials**: 3
@@ -141,9 +141,27 @@ When the automated machine learning job has completed, you can review the best m
   
 1. Select the text under **Algorithm name** for the best model to view its details.
 
-1. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
+1. Select the **Metrics** tab from the top navigation bar of the completed job.
 
-    Review the charts which show the performance of the model. The **residuals** chart shows the *residuals* (the differences between predicted and actual values) as a histogram. The **predicted_true** chart compares the predicted values against the true values. 
+2. Review the scalar metrics displayed at the top of the page. Note the following key values reported by the model:
+
+    - **Accuracy**
+    - **AUC_weighted**
+    - **F1_score_weighted**
+    - **Log_loss**
+    - **Precision_score_weighted**
+    - **Recall_score_macro**
+
+    These metrics provide a high-level summary of how well the model is classifying instances across all classes.
+
+3. Scroll down to review the performance charts. Examine each of the following:
+
+    - **Precision-Recall Curve** - review the trade-off between precision and recall across classification thresholds. A curve close to the top-right corner indicates strong performance, especially on imbalanced datasets.
+    - **ROC Curve** - observe how well the model separates classes. A curve that hugs the top-left corner signals strong discrimination between positive and negative labels.
+    - **Calibration Curve** - check how closely the model's predicted probabilities align with actual observed outcomes. A well-calibrated model follows the ideal diagonal line.
+    - **Lift Curve** - assess how much better the model performs compared to a random baseline when targeting a segment of the population.
+    - **Cumulative Gains Curve** - observe what proportion of true positives the model captures as more of the dataset is scored.
+    - **Confusion Matrix** - examine the breakdown of predictions into true positives, true negatives, false positives, and false negatives. Use this to identify where the model is misclassifying instances between classes.
 
 <!-- ## Deploy and test the model
 
